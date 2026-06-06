@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="North Dakota 1951 commission proposal inspired design">
+  <rect width="1600" height="900" fill="#2d6b2e"/>
+  <circle cx="840" cy="170" r="122" fill="#f5c842"/>
+  <circle cx="840" cy="170" r="78" fill="#f2f8d7" opacity=".35"/>
+  <g fill="#f5c842">
+    <path d="M418 758c34-134 67-238 118-325 48-81 104-140 169-178" fill="none" stroke="#f5c842" stroke-width="20" stroke-linecap="round"/>
+    <path d="M418 758c-20-96-10-188 28-275 37-84 92-154 166-213" fill="none" stroke="#d8a900" stroke-width="8" stroke-linecap="round" opacity=".9"/>
+    <path d="M1200 760c-28-140-64-246-122-333-54-82-118-144-193-186" fill="none" stroke="#f5c842" stroke-width="20" stroke-linecap="round"/>
+    <path d="M1200 760c12-98-1-191-38-279-36-87-92-160-169-221" fill="none" stroke="#d8a900" stroke-width="8" stroke-linecap="round" opacity=".9"/>
+    <path d="M808 372h64v360h-64z"/>
+    <path d="M840 400l-40 20 40-6 40 6z"/>
+    <path d="M840 420l-54 26 54-10 54 10z"/>
+    <path d="M840 446l-34 40 34-18 34 18z"/>
+  </g>
+  <path d="M402 770h180" stroke="#f2f8d7" stroke-width="18" stroke-linecap="round"/>
+  <path d="M1018 770h180" stroke="#f2f8d7" stroke-width="18" stroke-linecap="round"/>
+</svg>

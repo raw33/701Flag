@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="North Dakota final prairie wildlife concept">
+  <rect width="1600" height="900" fill="#0b6f98"/>
+  <circle cx="870" cy="110" r="92" fill="#f5c842"/>
+  <g stroke="#f5c842" stroke-width="14" stroke-linecap="round">
+    <path d="M870 26v38"/>
+    <path d="M870 156v38"/>
+    <path d="M778 110h-38"/>
+    <path d="M1000 110h-38"/>
+    <path d="M807 47l-24-24"/>
+    <path d="M933 47l24-24"/>
+    <path d="M807 173l-24 24"/>
+    <path d="M933 173l24 24"/>
+  </g>
+  <path d="M880 250c-96 100-168 198-214 292-51 105-76 205-70 300" fill="none" stroke="#b7e3ff" stroke-width="42" stroke-linecap="round"/>
+  <path d="M852 250c-78 90-142 184-183 279-44 102-64 201-58 303" fill="none" stroke="#7fd3ff" stroke-width="16" stroke-linecap="round"/>
+  <g fill="#f5c842">
+    <path d="M296 706c30-72 66-136 109-193 47-63 99-112 157-146 18-11 40-18 63-22-26 27-49 57-68 89-55 95-90 200-105 317z"/>
+    <path d="M386 642c28-18 52-40 73-65 20-23 38-52 52-88 17 40 35 71 55 94 20 24 44 44 72 59-36 10-72 15-108 15-49 0-95-5-144-15z"/>
+    <path d="M1132 706c0-74 8-144 24-209 17-72 41-133 72-182 31-49 69-84 114-107-18 38-31 76-38 113-9 47-11 92-6 136 7 68 25 129 55 183-42 37-82 61-121 73-36 12-73 15-110 13z"/>
+    <path d="M1078 684c44-22 81-49 111-82 31-34 55-72 70-115 13 39 33 74 58 106 24 31 52 57 85 79-39 12-78 18-116 18-63 0-123-2-188-6z"/>
+    <path d="M568 688c24-18 49-33 77-44 28-12 58-18 92-18-13 20-28 37-44 53-19 18-41 33-67 45-22-10-43-20-58-36z"/>
+  </g>
+  <g fill="#c07b31">
+    <ellipse cx="496" cy="620" rx="148" ry="74"/>
+    <ellipse cx="446" cy="570" rx="128" ry="58"/>
+    <circle cx="392" cy="554" r="42"/>
+    <path d="M344 548c-30-22-55-30-78-28 18 15 32 31 41 49" fill="none" stroke="#c07b31" stroke-width="26" stroke-linecap="round"/>
+    <path d="M432 540c20-18 35-39 42-63 17 22 30 44 40 67" fill="none" stroke="#c07b31" stroke-width="22" stroke-linecap="round"/>
+    <path d="M560 646c19 27 31 59 35 96" fill="none" stroke="#c07b31" stroke-width="18" stroke-linecap="round"/>
+    <path d="M430 710c-2 23 0 50 7 82" fill="none" stroke="#c07b31" stroke-width="16" stroke-linecap="round"/>
+    <path d="M374 710c-11 21-18 46-20 77" fill="none" stroke="#c07b31" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <path d="M918 720c48-22 94-31 140-28" fill="none" stroke="#f5c842" stroke-width="16" stroke-linecap="round"/>
+</svg>

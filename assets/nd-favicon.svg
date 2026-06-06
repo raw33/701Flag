@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="North Dakota-inspired icon">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0a6ea3"/>
+      <stop offset="1" stop-color="#0b4f7a"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="28" fill="url(#g)"/>
+  <circle cx="128" cy="92" r="42" fill="#f5c842"/>
+  <g fill="#f5c842">
+    <path d="M124 126h8v68h-8z"/>
+    <path d="M128 130l-34 20 34-2 34 2z"/>
+    <path d="M128 138l-44 28 44-10 44 10z"/>
+    <path d="M128 146l-30 44 30-18 30 18z"/>
+  </g>
+  <path d="M70 210c34-32 82-33 116-4" fill="none" stroke="#b7e3ff" stroke-width="14" stroke-linecap="round"/>
+  <path d="M54 206c40-42 96-46 148-10" fill="none" stroke="#76c8ef" stroke-width="8" stroke-linecap="round" opacity=".9"/>
+</svg>
