@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>North Dakota Flag Initiative</title>
+<meta name="description" content="A North Dakota flag story about the current flag, the governor's flag, historical concepts, and what a simpler next flag could become."/>
+<link rel="icon" type="image/png" href="assets/nd-source/current-flag.png"/>
+<style>
+:root{
+  --bg:#07131f;
+  --bg-2:#0d2440;
+  --panel:#0f2033;
+  --panel-2:#123355;
+  --line:rgba(245,199,78,.18);
+  --text:#f6f1e7;
+  --muted:rgba(246,241,231,.72);
+  --muted-2:rgba(246,241,231,.52);
+  --gold:#f2b21b;
+  --gold-2:#ffd463;
+  --blue:#1d61b0;
+  --green:#60914b;
+  --shadow:0 20px 55px rgba(0,0,0,.38);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(96,145,75,.16), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(255,212,99,.12), transparent 22%),
+    linear-gradient(180deg, #06111b 0%, var(--bg) 25%, #071521 100%);
+  color:var(--text);
+  overflow-x:hidden;
+}
+img{max-width:100%; display:block}
+a{color:inherit}
+button,input,textarea{font:inherit}
+
+.shell{position:relative}
+.noise{
+  position:fixed; inset:0; pointer-events:none; opacity:.07;
+  background-image:linear-gradient(rgba(255,255,255,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px);
+  background-size:36px 36px;
+  mask-image:radial-gradient(circle at center, black 45%, transparent 100%);
+}
+
+.wrap{width:min(1160px, calc(100% - 32px)); margin:0 auto}
+
+.topbar{
+  position:sticky; top:0; z-index:20;
+  backdrop-filter:blur(16px);
+  background:rgba(7,19,31,.82);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.topbar-inner{
+  width:min(1160px, calc(100% - 32px));
+  margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:18px;
+  padding:18px 0;
+}
+.brand{
+  display:flex; flex-direction:column; gap:4px;
+  text-decoration:none;
+}
+.brand strong{
+  font:700 0.86rem/1.1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--gold-2);
+}
+.brand span{
+  font:500 0.78rem/1.2 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.08em; color:var(--muted-2);
+}
+.nav{display:flex; gap:18px; flex-wrap:wrap; justify-content:flex-end}
+.nav a{
+  text-decoration:none;
+  color:var(--muted);
+  font:600 0.72rem/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.16em; text-transform:uppercase;
+}
+.nav a:hover{color:var(--gold-2)}
+
+section{padding:88px 0}
+
+.hero{
+  padding:78px 0 56px;
+  position:relative;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(96,145,75,.22), transparent 32%),
+    radial-gradient(circle at 80% 10%, rgba(242,178,27,.16), transparent 24%),
+    radial-gradient(circle at 75% 65%, rgba(29,97,176,.32), transparent 24%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:34px;
+  align-items:center;
+}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font:700 0.72rem/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.28em; text-transform:uppercase;
+  color:var(--gold-2);
+}
+.eyebrow::before{
+  content:"";
+  width:36px; height:1px; background:var(--gold);
+}
+h1,h2,h3,p{margin:0}
+h1{
+  margin-top:18px;
+  font-size:clamp(3rem, 7vw, 6.2rem);
+  line-height:.94;
+  letter-spacing:-.05em;
+  max-width:10ch;
+}
+.lead{
+  margin-top:18px;
+  font-size:clamp(1.04rem, 1.6vw, 1.18rem);
+  line-height:1.85;
+  color:var(--muted);
+  max-width:62ch;
+}
+.note{
+  margin-top:16px;
+  font-size:0.92rem;
+  line-height:1.75;
+  color:var(--muted-2);
+  max-width:68ch;
+}
+.note a{
+  color:var(--gold-2);
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.hero-copy .meta{
+  margin-top:22px;
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.chip{
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+  font:600 0.72rem/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.12em; text-transform:uppercase;
+}
+.chip.accent{background:rgba(242,178,27,.1); border-color:rgba(242,178,27,.24); color:var(--gold-2)}
+
+.hero-visual{
+  position:relative;
+  min-height:640px;
+  display:grid;
+  grid-template-columns:1.1fr .82fr;
+  gap:18px;
+}
+.hero-frame{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)),
+    linear-gradient(180deg, #14345b, #0c2038);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.hero-frame.primary{display:flex; align-items:center; justify-content:center; padding:18px}
+.hero-frame.primary img{width:100%; height:100%; object-fit:contain; aspect-ratio:4/5; border-radius:18px}
+.hero-stack{
+  display:grid; gap:18px;
+}
+.hero-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.09);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0)), #10283e;
+  box-shadow:var(--shadow);
+}
+.hero-card img{width:100%; height:100%; object-fit:contain}
+.hero-card.small{min-height:190px; padding:12px}
+.hero-card.medium{min-height:230px; padding:12px}
+.hero-card .label{
+  position:absolute; top:12px; left:12px;
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(7,19,31,.78);
+  border:1px solid rgba(255,255,255,.1);
+  font:700 0.64rem/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--gold-2);
+}
+
+.section-head{
+  display:grid; gap:14px;
+  max-width:820px;
+  margin-bottom:30px;
+}
+.section-head h2{
+  font-size:clamp(2rem, 4vw, 3.8rem);
+  line-height:1.02;
+  letter-spacing:-.04em;
+}
+.section-head p{
+  color:var(--muted);
+  font-size:1.02rem;
+  line-height:1.85;
+  max-width:70ch;
+}
+
+.story{
+  background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,0));
+}
+.story-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:18px;
+}
+.story-card{
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.story-card img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:contain;
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)), #0d2644;
+  padding:16px;
+}
+.story-card .body{padding:18px 18px 20px}
+.story-card h3{
+  font-size:1.22rem;
+  line-height:1.15;
+  margin-bottom:8px;
+}
+.story-card p{
+  color:var(--muted);
+  line-height:1.75;
+  font-size:.95rem;
+}
+.story-card .tagline{
+  margin-top:14px;
+  display:inline-flex;
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(242,178,27,.1);
+  border:1px solid rgba(242,178,27,.22);
+  color:var(--gold-2);
+  font:700 0.66rem/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.2em; text-transform:uppercase;
+}
+
+.split{
+  display:grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap:24px;
+  align-items:start;
+}
+.principles{
+  background:
+    radial-gradient(circle at top right, rgba(242,178,27,.12), transparent 25%),
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  padding:24px;
+}
+.principles ul{
+  list-style:none;
+  padding:0;
+  margin:18px 0 0;
+  display:grid;
+  gap:14px;
+}
+.principles li{
+  padding:16px 16px 16px 18px;
+  border-left:3px solid var(--gold);
+  background:rgba(0,0,0,.18);
+  border-radius:14px;
+}
+.principles li strong{
+  display:block;
+  margin-bottom:6px;
+  font-size:.92rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold-2);
+}
+.principles li span{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.spotlight{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(96,145,75,.18), transparent 24%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+.spotlight-frame{
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0)), #0d2743;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  padding:16px;
+}
+.spotlight-frame img{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:contain;
+}
+.spotlight-meta{
+  display:flex; flex-wrap:wrap; gap:10px;
+  margin-top:16px;
+}
+.spotlight h3{
+  margin-top:16px;
+  font-size:1.6rem;
+  line-height:1.1;
+}
+.spotlight p{
+  margin-top:10px;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.selector{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:12px;
+  margin-top:18px;
+}
+.select-card{
+  cursor:pointer;
+  border-radius:16px;
+  overflow:hidden;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.select-card:hover,.select-card.active{
+  transform:translateY(-3px);
+  border-color:rgba(242,178,27,.42);
+  box-shadow:0 14px 28px rgba(0,0,0,.26);
+}
+.select-card img{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:contain;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)), #0b223c;
+}
+.select-card .copy{padding:12px 12px 14px}
+.select-card .copy strong{
+  display:block;
+  font-size:.92rem;
+  line-height:1.2;
+  margin-bottom:6px;
+}
+.select-card .copy span{
+  color:var(--muted);
+  font-size:.86rem;
+  line-height:1.55;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:14px;
+}
+.gallery figure{
+  margin:0;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.04);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+.gallery img{
+  width:100%;
+  aspect-ratio:16/11;
+  object-fit:contain;
+  background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02)), #0d2644;
+  padding:10px;
+}
+.gallery figcaption{
+  padding:12px 12px 14px;
+  color:var(--muted);
+  font-size:.84rem;
+  line-height:1.55;
+}
+.gallery figcaption strong{
+  display:block;
+  color:var(--text);
+  margin-bottom:4px;
+  font-size:.9rem;
+}
+
+.pitch{
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.05));
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.pitch-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:18px;
+}
+.pitch-card{
+  padding:22px;
+  border-radius:var(--radius);
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.08);
+}
+.pitch-card h3{
+  font-size:1.2rem;
+  margin-bottom:10px;
+}
+.pitch-card p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.cta{
+  padding:90px 0 104px;
+}
+.cta-panel{
+  position:relative;
+  overflow:hidden;
+  border-radius:calc(var(--radius) + 6px);
+  padding:34px;
+  background:
+    radial-gradient(circle at top left, rgba(96,145,75,.16), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(242,178,27,.18), transparent 22%),
+    linear-gradient(180deg, #10253d, #091421);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:var(--shadow);
+}
+.cta-panel h2{
+  font-size:clamp(2rem, 4.4vw, 3.5rem);
+  line-height:1.03;
+  max-width:14ch;
+}
+.cta-panel p{
+  margin-top:14px;
+  max-width:68ch;
+  color:var(--muted);
+  line-height:1.8;
+}
+.cta-row{
+  margin-top:22px;
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.button{
+  display:inline-flex;
+  align-items:center; justify-content:center;
+  min-height:46px;
+  padding:0 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font:700 0.75rem/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.18em; text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.12);
+}
+.button.primary{
+  background:linear-gradient(180deg, var(--gold-2), var(--gold));
+  color:#1a1a1a;
+  border-color:rgba(255,255,255,.06);
+}
+.button.secondary{
+  color:var(--text);
+  background:rgba(255,255,255,.05);
+}
+
+footer{
+  padding:22px 0 34px;
+  color:rgba(246,241,231,.42);
+  text-align:center;
+  font:600 0.65rem/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease}
+.reveal.visible{opacity:1; transform:none}
+
+@media (max-width: 980px){
+  .hero-grid,.split,.story-grid,.pitch-grid{grid-template-columns:1fr}
+  .hero-visual{min-height:auto; grid-template-columns:1fr; }
+  .hero-frame.primary img{aspect-ratio:16/14}
+  .hero-stack{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .selector{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width: 640px){
+  .wrap,.topbar-inner{width:min(100% - 20px, 1160px)}
+  .topbar-inner{padding:14px 0; align-items:flex-start; flex-direction:column}
+  .nav{justify-content:flex-start}
+  .hero{padding-top:34px}
+  section{padding:64px 0}
+  h1{max-width:12ch}
+  .hero-stack,.gallery,.selector{grid-template-columns:1fr}
+  .cta-panel{padding:24px}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="noise"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <strong>North Dakota Flag Initiative</strong>
+        <span>A story about symbols, not paperwork</span>
+      </a>
+      <nav class="nav" aria-label="Section navigation">
+        <a href="#story">Story</a>
+        <a href="#principles">Principles</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pitch">Pitch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">North Dakota's flag conversation</div>
+          <h1>North Dakota deserves a flag that reads at a glance.</h1>
+          <p class="lead">
+            The state already has a current flag, a governor's flag, older proposals, and a growing field of concept flags.
+            That history gives us permission to ask for a better next step: no words, no seal dropped on a blank field, just a symbol that tells the North Dakota story clearly and confidently.
+          </p>
+          <p class="note">
+            This page is also part of a bigger national conversation. Around the U.S., states are rethinking their flags to make them simpler, more distinct, and easier to recognize, and CGP Grey's fun critique helped spark a lot of that interest:
+            <a href="https://youtu.be/l4w6808wJcU?t=189&si=HkSbiBZAYKMV9nf7" target="_blank" rel="noopener">watch the North Dakota segment</a>.
+          </p>
+          <div class="meta">
+            <span class="chip accent">No words</span>
+            <span class="chip accent">No seal-on-blue</span>
+            <span class="chip">Built for distance</span>
+            <span class="chip">Rooted in place</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-frame primary">
+            <img src="assets/nd-source/rich-next-flag.png" alt="Rich's next state flag design for North Dakota"/>
+          </div>
+          <div class="hero-stack">
+            <div class="hero-card medium">
+              <div class="label">Current flag</div>
+              <img src="assets/nd-source/current-flag.png" alt="Current North Dakota state flag"/>
+            </div>
+            <div class="hero-card small">
+              <div class="label">Governor's flag</div>
+              <img src="assets/nd-source/governor-flag.jpg" alt="North Dakota governor's flag-style banner on green background"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="story">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">The backstory</div>
+          <h2>North Dakota already has more than one flag story.</h2>
+          <p>
+            That is the point. The current state flag is official, the governor's flag shows that North Dakota already understands the power of a distinct ceremonial banner, and the concept flags prove there is room to imagine something clearer, more modern, and more memorable.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-card reveal">
+            <img src="assets/nd-source/current-flag.png" alt="Current North Dakota state flag"/>
+            <div class="body">
+              <h3>The current state flag</h3>
+              <p>It carries the state's seal language into a flag format, but it asks too much of the eye at any real distance. The detail is there; the readability is not.</p>
+              <div class="tagline">Official, but overworked</div>
+            </div>
+          </article>
+          <article class="story-card reveal">
+            <img src="assets/nd-source/governor-flag.jpg" alt="Governor's flag-style North Dakota banner with coat of arms on green background"/>
+            <div class="body">
+              <h3>The governor's flag</h3>
+              <p>Even the state has a separate ceremonial banner language. That matters because it shows North Dakota already accepts that different flags can do different jobs.</p>
+              <div class="tagline">A separate symbolic role</div>
+            </div>
+          </article>
+          <article class="story-card reveal">
+            <img src="assets/nd-source/clell-gannon.png" alt="Proposed North Dakota flag by Clell Gannon"/>
+            <div class="body">
+              <h3>Concept flags are not new</h3>
+              <p>North Dakota has seen proposals before, which means the idea of improving the flag is not radical. It is part of an ongoing state conversation about how to represent the place well.</p>
+              <div class="tagline">The conversation has history</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="principles">
+      <div class="wrap split">
+        <div class="principles reveal">
+          <div class="eyebrow">What the next flag should do</div>
+          <h2>Make the flag do the job of a flag.</h2>
+          <ul>
+            <li>
+              <strong>Recognize instantly</strong>
+              <span>A flag has to work from across a field, on a street pole, or in a tiny social post thumbnail.</span>
+            </li>
+            <li>
+              <strong>Tell the North Dakota story</strong>
+              <span>The best symbols can carry prairie, river, agriculture, sky, and resilience without becoming cluttered.</span>
+            </li>
+            <li>
+              <strong>Leave the seal for official documents</strong>
+              <span>Seals can be detailed. Flags need a simpler language so they can be remembered and reproduced by hand.</span>
+            </li>
+            <li>
+              <strong>Invite support across styles</strong>
+              <span>The goal is not to force one perfect answer. It is to rally around a better direction, no matter which final version wins.</span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="spotlight reveal" id="spotlight">
+          <div class="spotlight-frame">
+            <img id="spotlightImg" src="assets/nd-source/rich-next-flag.png" alt="Rich's next state flag design for North Dakota"/>
+          </div>
+          <div class="spotlight-meta">
+            <span class="chip accent" id="spotlightBadge">Featured concept</span>
+            <span class="chip" id="spotlightSource">Rich's next state flag</span>
+          </div>
+          <h3 id="spotlightTitle">A new flag can tell the story without using words.</h3>
+          <p id="spotlightCopy">This concept keeps the North Dakota palette and state feeling while pushing toward a simpler public symbol. It is meant to start the conversation, not end it.</p>
+
+          <div class="selector" aria-label="Select a featured North Dakota flag concept">
+            <div class="select-card active" tabindex="0" role="button"
+              data-img="assets/nd-source/rich-next-flag.png"
+              data-badge="Featured concept"
+              data-source="Rich's next state flag"
+              data-title="A new flag can tell the story without using words."
+              data-copy="This concept keeps the North Dakota palette and state feeling while pushing toward a simpler public symbol. It is meant to start the conversation, not end it.">
+              <img src="assets/nd-source/rich-next-flag.png" alt="Rich's next state flag design"/>
+              <div class="copy"><strong>Rich's next flag</strong><span>One direction for a cleaner future symbol.</span></div>
+            </div>
+            <div class="select-card" tabindex="0" role="button"
+              data-img="assets/nd-source/cgp-grey.png"
+              data-badge="Principles study"
+              data-source="CGP Grey-inspired concept"
+              data-title="Simple shapes make the idea easier to carry."
+              data-copy="This version leans into flag principles first: fewer moving parts, clearer geometry, and a stronger read from a distance.">
+              <img src="assets/nd-source/cgp-grey.png" alt="CGP Grey-inspired North Dakota flag concept"/>
+              <div class="copy"><strong>CGP Grey study</strong><span>Flag principles, stripped down.</span></div>
+            </div>
+            <div class="select-card" tabindex="0" role="button"
+              data-img="assets/nd-source/clell-gannon.png"
+              data-badge="Historical concept"
+              data-source="Clell Gannon proposal"
+              data-title="North Dakota has already explored cleaner alternatives."
+              data-copy="Looking back at a proposal like this helps the page show that concept work is part of the state's flag history, not a detour from it.">
+              <img src="assets/nd-source/clell-gannon.png" alt="Proposed North Dakota flag by Clell Gannon"/>
+              <div class="copy"><strong>Historical proposal</strong><span>Proof that the conversation is longstanding.</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">The concept wall</div>
+          <h2>From official flags to concept sketches, the visual language is already expanding.</h2>
+          <p>
+            This gallery keeps the North Dakota story front and center: the state flag, the governor's flag, the historical proposal, and several modern concept flags that explore what a simpler, wordless, more recognizable symbol could look like.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <figure class="reveal">
+            <img src="assets/nd-source/current-flag.png" alt="Current North Dakota state flag"/>
+            <figcaption><strong>Current state flag</strong> The existing badge-style symbol, shown here as the starting point for the conversation.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/governor-flag.jpg" alt="North Dakota governor's flag-style banner with coat of arms on green background"/>
+            <figcaption><strong>Governor's flag</strong> A separate ceremonial banner shows that the state already uses distinct visual language for different roles.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/clell-gannon.png" alt="Proposed North Dakota flag by Clell Gannon"/>
+            <figcaption><strong>Historical proposal</strong> A reminder that North Dakota has explored simpler symbols before.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/cgp-grey.png" alt="CGP Grey-inspired North Dakota flag concept"/>
+            <figcaption><strong>CGP Grey-inspired concept</strong> A flag-principles take that favors shape, color, and distance readability.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/rich-next-flag.png" alt="Rich's next state flag design for North Dakota"/>
+            <figcaption><strong>Rich's next flag</strong> A working concept that keeps the North Dakota palette but simplifies the storytelling.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/gemini-hxc8.png" alt="Gemini-generated North Dakota flag concept"/>
+            <figcaption><strong>Gemini concept 1</strong> A fresh exploration that leans into North Dakota blue and a cleaner central form.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/gemini-e0bb.png" alt="Gemini-generated North Dakota flag concept"/>
+            <figcaption><strong>Gemini concept 2</strong> A minimal symbol study that still reads like a state flag, not a poster.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/gemini-iei8.png" alt="Gemini-generated North Dakota flag concept"/>
+            <figcaption><strong>Gemini concept 3</strong> Another directional study showing how a few shapes can carry a bigger story.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/gemini-ij4l.png" alt="Gemini-generated North Dakota flag concept"/>
+            <figcaption><strong>Gemini concept 4</strong> A more emblematic approach that still aims for distance-first clarity.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/gemini-y6e0.png" alt="Gemini-generated North Dakota flag concept"/>
+            <figcaption><strong>Gemini concept 5</strong> A landscape-led composition that pushes the horizon and sun idea forward.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="assets/nd-source/gemini-jsdz.png" alt="Gemini-generated North Dakota flag concept"/>
+            <figcaption><strong>Gemini concept 6</strong> A compact, bold mark that keeps the overall idea simple enough to remember.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="pitch" id="pitch">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">The pitch</div>
+          <h2>Support an updated design, whatever form it takes.</h2>
+          <p>
+            The page is not asking people to memorize one perfect answer. It is asking them to agree on the direction: North Dakota can have a flag that feels more like a flag, more like the state, and easier to recognize when it matters.
+          </p>
+        </div>
+
+        <div class="pitch-grid">
+          <div class="pitch-card reveal">
+            <h3>Make it easier to love</h3>
+            <p>A cleaner flag invites use. When people can draw it, wear it, and share it, the symbol has a better chance of becoming part of daily life.</p>
+          </div>
+          <div class="pitch-card reveal">
+            <h3>Tell the story in one glance</h3>
+            <p>North Dakota's identity is broad, but a flag should still feel immediate. The best designs capture a place without explaining themselves.</p>
+          </div>
+          <div class="pitch-card reveal">
+            <h3>Keep the door open</h3>
+            <p>This page encourages support for an updated design process, not one single final answer. The win is a better standard for what the next flag should be.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-panel reveal">
+          <div class="eyebrow">Where the page lands</div>
+          <h2>North Dakota can keep its history and still choose a better symbol.</h2>
+          <p>
+            The state already has enough official detail in its seals, documents, and ceremonial banners. What it needs now is a public flag that is simple, distinctive, and built to carry North Dakota pride into the future.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#story">Start with the story</a>
+            <a class="button secondary" href="#gallery">Browse the concepts</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    North Dakota Flag Initiative • designed to encourage a cleaner, more recognizable next flag for the state
+  </footer>
+</div>
+
+<script>
+const spotlightImg = document.getElementById('spotlightImg');
+const spotlightBadge = document.getElementById('spotlightBadge');
+const spotlightSource = document.getElementById('spotlightSource');
+const spotlightTitle = document.getElementById('spotlightTitle');
+const spotlightCopy = document.getElementById('spotlightCopy');
+
+function setSpotlight(card){
+  document.querySelectorAll('.select-card').forEach(node => node.classList.toggle('active', node === card));
+  spotlightImg.src = card.dataset.img;
+  spotlightImg.alt = card.querySelector('img').alt;
+  spotlightBadge.textContent = card.dataset.badge;
+  spotlightSource.textContent = card.dataset.source;
+  spotlightTitle.textContent = card.dataset.title;
+  spotlightCopy.textContent = card.dataset.copy;
+}
+
+document.querySelectorAll('.select-card').forEach(card => {
+  card.addEventListener('click', () => setSpotlight(card));
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setSpotlight(card);
+    }
+  });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.16 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
